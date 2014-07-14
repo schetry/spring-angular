@@ -14,24 +14,28 @@
 
 <body ng-app="loginDemo">
 	<div ng-controller="loginController">
-		<form name="loginForm" role="form" class="form-horizontal" ng-submit="loginValidate()" novalidate>
-			<div class="username-wrapper form-group">
-				<label class="col-sm-2 control-label">User Name:</label>
-				<div class="col-sm-3">
-					<input type="text" name="userName" class="form-control" ng-model="userName" ng-required="true" />
-				</div>
+		<div class="jumbotron">
+			<div class="container-fluid">
+				<form name="loginForm" role="form" class="form-horizontal" ng-submit="loginValidate()" novalidate>
+					<div class="username-wrapper form-group">
+						<label class="col-sm-2 control-label">User Name:</label>
+						<div class="col-sm-3">
+							<input type="text" name="userName" class="form-control" ng-model="userName" ng-required="true" />
+						</div>
+					</div>
+
+
+					<div class="password-wrapper form-group">
+						<label class="col-sm-2 control-label">Password:</label>
+						<div class="col-sm-3">
+							<input type="password" name="password" class="form-control" ng-model="password" ng-required="true" />
+						</div>
+					</div>
+
+					<input type="submit" class="btn btn-primary" value="Login" ng-disabled="loginForm.$invalid" />
+				</form>
 			</div>
-
-
-			<div class="password-wrapper form-group">
-				<label class="col-sm-2 control-label">Password:</label>
-				<div class="col-sm-3">
-					<input type="password" name="password" class="form-control" ng-model="password" ng-required="true" />
-				</div>
-			</div>
-
-			<input type="submit" class="btn btn-primary" value="Login" ng-disabled="loginForm.$invalid" />
-		</form>
+		</div>
 	</div>
 </body>
 
