@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<script src="vendor/js/jquery.min.js"></script>
+	<script src="vendor/js/angular.min.js"></script>
+
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/loginController.js"></script>
+	<title>Document</title>
+</head>
+
+<body ng-app="loginDemo">
+	<div ng-controller="loginController">
+		<form name="loginForm" ng-submit="loginValidate()" novalidate>
+			<div class="username-wrapper">
+				<label>User Name:</label>
+				<input type="text" name="userName" ng-model="userName" ng-required="true" />
+			</div>
+
+
+			<div class="password-wrapper">
+				<label>Password:</label>
+				<input type="password" name="password" ng-model="password" ng-required="true" />
+			</div>
+
+			<input type="submit" value="Login" ng-disabled="loginForm.$invalid" />
+		</form>
+	</div>
+</body>
+
+</html>
